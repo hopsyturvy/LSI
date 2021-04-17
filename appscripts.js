@@ -72,12 +72,13 @@ window.onload = function () {
 
     var inputs = document.querySelectorAll(".app-form-input");
     inputs.forEach(element => {
-        element.addEventListener("change",hideResults)
+        element.setAttribute("step", "any");
+        element.addEventListener("change",hideResults);
     });
 
     var pickers = document.querySelectorAll(".app-form-unit-selector");
     pickers.forEach(element => {
-        element.addEventListener("change",hideResults)
+        element.addEventListener("change",hideResults);
     });
 
     var LSIsubmit = document.getElementById("app-LSI-form");
@@ -91,19 +92,19 @@ window.onload = function () {
 
     var bwi = document.querySelectorAll("base-water-input");
     bwi.forEach(element => {
-        element.addEventListener("change", changeBaseWater)
+        element.addEventListener("change", changeBaseWater);
     });
 
     var twi = document.querySelectorAll("target-water-input");
     twi.forEach(element => {
-        element.addEventListener("change", changeTargetWater)
+        element.addEventListener("change", changeTargetWater);
     });
 
     var bwp = document.getElementById("BaseWater");
-    bwp.addEventListener("change", changeBaseWaterPicker)
+    bwp.addEventListener("change", changeBaseWaterPicker);
 
     var twp = document.getElementById("TargetWater");
-    twp.addEventListener("change", changeTargetWaterPicker)
+    twp.addEventListener("change", changeTargetWaterPicker);
     
     BaseWaterSpecs.forEach(addToWaterSpecsList);
     TargetWaterSpecs.forEach(addToTargetWaterList);
@@ -136,8 +137,8 @@ function switchTab (event) {
     if (!this.classList.contains("app-current-tab")) {
         var alltabs = document.querySelectorAll(".app-tab");
         alltabs.forEach(element => {
-            element.classList.remove("app-current-tab")
-            element.classList.add("app-alt-tab")
+            element.classList.remove("app-current-tab");
+            element.classList.add("app-alt-tab");
         })
  
         this.classList.add("app-current-tab");
@@ -357,9 +358,9 @@ function calculateRemin() {
     let BV = Math.round(BufferVolume * 10) / 10;
     let WV = Math.round(WaterVolume * 10) / 10;
 
-    document.getElementById("HardnessVolume").innerHTML = HV.toFixed(1) + "g"
-    document.getElementById("BufferVolume").innerHTML = BV.toFixed(1) + "g"
-    document.getElementById("WaterVolume").innerHTML = WV.toFixed(1) + "g"
+    document.getElementById("HardnessVolume").innerHTML = HV.toFixed(1) + "g";
+    document.getElementById("BufferVolume").innerHTML = BV.toFixed(1) + "g";
+    document.getElementById("WaterVolume").innerHTML = WV.toFixed(1) + "g";
     showResults();
 
 
@@ -376,28 +377,25 @@ function changeTargetWater() {
 }
 
 function changeBaseWaterPicker() {
-    console.log(document.getElementById("BaseWater").value)
-    let SelectedWater = document.getElementById("BaseWater").value
+    let SelectedWater = document.getElementById("BaseWater").value;
     
     for (let i = 0; i < BaseWaterSpecs.length; i++) {
-        console.log(BaseWaterSpecs[i])
+
         if (BaseWaterSpecs[i].name == SelectedWater) {
-            document.getElementById("BaseKH").value = BaseWaterSpecs[i].KH
-            document.getElementById("BaseGH").value = BaseWaterSpecs[i].GH
+            document.getElementById("BaseKH").value = BaseWaterSpecs[i].KH;
+            document.getElementById("BaseGH").value = BaseWaterSpecs[i].GH;
         }
     }
 
 }
 
 function changeTargetWaterPicker() {
-    console.log(document.getElementById("TargetWater").value)
-    let SelectedWater = document.getElementById("TargetWater").value
+    let SelectedWater = document.getElementById("TargetWater").value;
     
     for (let i = 0; i < TargetWaterSpecs.length; i++) {
-        console.log(TargetWaterSpecs[i])
         if (TargetWaterSpecs[i].name == SelectedWater) {
-            document.getElementById("TargetKH").value = TargetWaterSpecs[i].KH
-            document.getElementById("TargetGH").value = TargetWaterSpecs[i].GH
+            document.getElementById("TargetKH").value = TargetWaterSpecs[i].KH;
+            document.getElementById("TargetGH").value = TargetWaterSpecs[i].GH;
         }
     }
 }
@@ -412,8 +410,8 @@ function calculateBottle() {
     var GH = Ca*2.497 + Mg*4.118;
     var KH = Bicarb*0.820;
 
-    document.getElementById("BottleHardness").innerHTML = GH.toFixed(1) + "ppm"
-    document.getElementById("BottleBuffer").innerHTML = KH.toFixed(1) + "ppm"
+    document.getElementById("BottleHardness").innerHTML = GH.toFixed(1) + "ppm";
+    document.getElementById("BottleBuffer").innerHTML = KH.toFixed(1) + "ppm";
 
     showResults();
 
