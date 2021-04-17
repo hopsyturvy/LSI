@@ -686,7 +686,7 @@
 
     <title>Langelier Saturation Index</title>
 
-    <link rel="stylesheet" href="LSI2.0.css">
+    <link rel="stylesheet" href="waterapp.css">
 
 </head>
 
@@ -843,10 +843,14 @@
 
         <form class="app-form app-hidden-form" id="app-remin-form" onsubmit="return false">
 
-            <div class="app-input-grid app-five-column-grid">
+            <div class="app-input-grid app-six-column-grid">
                 <!-- header row -->
                 <div class="app-griditem">
                     <!--spacer-->
+                </div>
+
+                <div class="app-grid-header-spacer">
+                    <!-- Extra column spacer-->
                 </div>
 
                 <div class="app-grid-header">
@@ -867,6 +871,7 @@
 
                 <!-- row 1-->
                 <label for="BaseGH" class="app-grid-label">Base water</label>
+                <div class="app-griditem"><!--spacer--></div>
                 <input class="app-form-input base-water-input" type="number" min="0" id="BaseGH" name="BaseGH" value=0
                     required>
                 <input class="app-form-input base-water-input" type="number" min="0" id="BaseKH" name="BaseKH" value=0
@@ -876,13 +881,14 @@
                     <option value="Custom">Custom</option>
                 </select>
 
-                <div class="grid-row-separator four-column-span">
+                <div class="grid-row-separator five-column-span">
                 </div>
                 <div class="grid-row-separator">
                 </div>
 
                 <!-- row 2-->
                 <label for="TargetGH" class="app-grid-label">Target water</label>
+                <div class="app-griditem"><!--spacer--></div>
                 <input class="app-form-input target-water-input" type="number" min="0" id="TargetGH" name="TargetGH"
                     value=0 required>
                 <input class="app-form-input target-water-input" type="number" min="0" id="TargetKH" name="TargetKH"
@@ -892,14 +898,15 @@
                     <option value="Custom">Custom</option>
                 </select>
 
-                <div class="grid-row-separator four-column-span">
+                <div class="grid-row-separator five-column-span">
                 </div>
                 <div class="grid-row-separator">
                 </div>
 
                 <!-- row 3-->
                 <label for="TargetVolume" class="app-grid-label">Amount to make</label>
-                <input class="app-form-input column-span-2-3" type="number" min="0" id="TargetVolume"
+                <div class="app-griditem"><!--spacer--></div>
+                <input class="app-form-input column-span-3-4" type="number" min="0" id="TargetVolume"
                     name="TargetVolume" value=1 required>
                 <div class="app-griditem"><!--spacer--></div>
                 <select class="app-form-unit-selector" name="WaterUnits" id="WaterUnits">
@@ -907,7 +914,7 @@
                     <option value="Gallons">Gallons</option>
                 </select>
 
-                <div class="grid-row-separator four-column-span">
+                <div class="grid-row-separator five-column-span">
                 </div>
                 <div class="grid-row-separator">
                 </div>
