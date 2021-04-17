@@ -358,9 +358,9 @@ function calculateRemin() {
     let BV = Math.round(BufferVolume * 10) / 10;
     let WV = Math.round(WaterVolume * 10) / 10;
 
-    document.getElementById("HardnessVolume").innerHTML = HV.toFixed(1) + "g";
-    document.getElementById("BufferVolume").innerHTML = BV.toFixed(1) + "g";
-    document.getElementById("WaterVolume").innerHTML = WV.toFixed(1) + "g";
+    document.getElementById("HardnessVolume").innerHTML = HV.toFixed(1) + " g";
+    document.getElementById("BufferVolume").innerHTML = BV.toFixed(1) + " g";
+    document.getElementById("WaterVolume").innerHTML = WV.toFixed(1) + " g";
     showResults();
 
 
@@ -410,8 +410,8 @@ function calculateBottle() {
     var GH = Ca*2.497 + Mg*4.118;
     var KH = Bicarb*0.820;
 
-    document.getElementById("BottleHardness").innerHTML = GH.toFixed(1) + "ppm";
-    document.getElementById("BottleBuffer").innerHTML = KH.toFixed(1) + "ppm";
+    document.getElementById("BottleHardness").innerHTML = GH.toFixed(1) + " ppm";
+    document.getElementById("BottleBuffer").innerHTML = KH.toFixed(1) + " ppm";
 
     showResults();
 
