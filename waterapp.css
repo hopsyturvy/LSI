@@ -316,9 +316,14 @@ input.app-input-error {
       padding-left: 0px;
       padding-right: 0px;
     }
+
+    .app-grid-header-spacer {
+        width: 0px;
+    }
+
   }
 
-@media screen and (max-width: 600px) {
+@media all and (max-width: 600px) {
     .app-output-container {
         display: block;
     }
