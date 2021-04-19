@@ -73,7 +73,7 @@ window.onload = function () {
     var inputs = document.querySelectorAll(".app-form-input");
     inputs.forEach(element => {
         element.setAttribute("step", "any");
-        element.addEventListener("change",hideResults);
+        element.addEventListener("change", hideResults);
     });
 
     var pickers = document.querySelectorAll(".app-form-unit-selector");
@@ -182,6 +182,7 @@ function hideResults() {
     document.querySelectorAll(".Output").forEach(element => {
         element.classList.add("app-hidden-results");
     });
+    checkError();
 
 }
 
@@ -416,4 +417,26 @@ function calculateBottle() {
     showResults();
 
 
+}
+
+// Error collection
+
+function checkError() {
+
+
+    var BaseGH = Number(document.getElementById("BaseGH").value);
+    var BaseKH = Number(document.getElementById("BaseKH").value);
+    var TargetGH = Number(document.getElementById("TargetGH").value);
+    var TargetKH = Number(document.getElementById("TargetKH").value);
+    var reminsubmit = document.getElementById("remin-submit");
+
+    console.log(reminsubmit)
+
+    if (TargetGH < BaseGH | TargetKH < BaseKH) {
+        reminsubmit.value = "Target GH/KH must be higher than base";
+        reminsubmit.classList.add("app-input-error");
+    } else {
+        reminsubmit.value = "Calculate";
+        reminsubmit.classList.remove("app-input-error");
+    }
 }
