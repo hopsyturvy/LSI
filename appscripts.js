@@ -64,6 +64,9 @@ var TargetWaterSpecs = [
 
 //Initialise
 window.onload = function () {
+
+    resizeTweak ();
+    window.addEventListener("resize", resizeTweak);
     
     var tabs = document.querySelectorAll(".app-tab");
     tabs.forEach(element => {
@@ -439,4 +442,37 @@ function checkError() {
         reminsubmit.value = "Calculate";
         reminsubmit.classList.remove("app-input-error");
     }
+}
+
+// Size tweak
+
+function resizeTweak () {
+    var container = document.getElementById("app-container")
+    console.log (container.clientWidth)
+    if (container.clientWidth < 600) {
+        var spacers = document.querySelectorAll(".app-grid-header-spacer");
+        spacers.forEach(element => {
+            element.classList.add("zero-width");
+        });
+
+        var blocky = document.querySelectorAll(".app-output-container");
+        blocky.forEach(element => {
+        element.classList.add("blocky");
+        });
+
+
+
+     } else {
+        var spacers = document.querySelectorAll(".app-grid-header-spacer");
+        spacers.forEach(element => {
+            element.classList.remove("zero-width");
+        });
+
+        var blocky = document.querySelectorAll(".app-output-container");
+        blocky.forEach(element => {
+        element.classList.remove("blocky");
+        });
+
+    }
+
 }

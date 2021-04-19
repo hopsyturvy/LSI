@@ -317,20 +317,14 @@ input.app-input-error {
       padding-right: 0px;
     }
 
-    .app-grid-header-spacer {
-        width: 0px;
-    }
-
   }
 
-@media all and (max-width: 600px) {
-    .app-output-container {
+
+    .app-output-container.blocky {
         display: block;
     }
 
-    .app-grid-header-spacer {
+    .app-grid-header-spacer.zero-width {
         width: 0px;
     }
 
-
-}
